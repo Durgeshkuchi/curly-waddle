@@ -1,0 +1,33 @@
+@import './colors.scss';
+
+.loginNavbar {
+  background: $white;
+  padding: 5px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+
+  .logo {
+    height: 70px; // Adjust size to match design
+    width: 150px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      color: $text-color;
+      font-size: 12px;
+      font-weight: bold;
+
+      &.active {
+        border-bottom: 2px solid $primary-blue;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import './Colors.scss';
+
+.dashboard {
+  display: flex;
+  margin-top: 70px;
+  height: calc(100vh - 160px);
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    background: #f4f4f4;
+  }
+}

@@ -1,0 +1,125 @@
+@import './Colors.scss';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $white;
+  padding: 10px 0px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+
+  .logo {
+    height: 40px;
+  }
+
+  .navbar-center {
+    display: flex;
+    gap: 25px;
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        border-bottom: 3px solid #0057b7;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 50px; /* Ensure it is right below the navbar */
+        left: 0;
+        width: 60vw;
+        background: $white;
+        color: $primary-blue;
+        padding: 20px 40px;
+        border-top: 1px solid $border-color;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        display: none;
+        z-index: 999;
+      }
+
+      &:hover .dropdown-menu {
+        display: flex;
+      }
+
+      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px; /* Ensures dropdown doesn't stretch too much on large screens */
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .column {
+        flex: 1;
+        padding: 10px;
+        min-width: 200px;
+
+        h4 {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: #333;
+          font-size: 14px;
+          padding: 8px 0;
+          text-decoration: none;
+          border-bottom: 2px solid transparent;
+          transition: border-bottom 0.3s ease-in-out;
+
+          &:hover {
+            color: $primary-blue;
+            border-bottom: 2px solid $primary-blue;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .icon {
+      font-size: 18px;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #0057b7;
+      }
+    }
+
+    .signin-button {
+      text-decoration: none;
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

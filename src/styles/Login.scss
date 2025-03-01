@@ -4,24 +4,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(
-    to bottom right,
-    $primary-blue,
-    $primary-green,
-    $primary-purple
-  );
+  height: calc(100vh - 190px); // Adjusting for Navbar height
+  background: $primary-blue;
+  flex-direction: column;
+
+  .content-area {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    .left-box {
+      color: $white;
+      max-width: 40%;
+
+      h1 {
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .cta-button {
+        background: #0a7302;
+        color: $white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
 
   .login-box {
-    width: 400px;
+    width: 350px;
     padding: 2rem;
-    background: white;
+    background: $white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 
     h2 {
       color: $primary-blue;
+      font-size: 24px;
       margin-bottom: 20px;
     }
 
@@ -39,16 +68,17 @@
       input {
         padding: 10px;
         margin-top: 5px;
-        border: 1px solid #ccc;
+        border: 1px solid $border-color;
         border-radius: 5px;
+        font-size: 16px;
       }
     }
 
     .login-button {
       width: 100%;
-      padding: 10px;
-      background: $primary-purple;
-      color: white;
+      padding: 12px;
+      background: $secondary-blue;
+      color: $white;
       font-size: 16px;
       border: none;
       border-radius: 5px;
@@ -63,8 +93,9 @@
     .forgot-link {
       margin-top: 10px;
       display: block;
-      color: $primary-green;
+      color: $primary-blue;
       text-decoration: none;
+      font-size: 14px;
     }
   }
 }
