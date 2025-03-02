@@ -8,7 +8,7 @@ import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/curly-waddle">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route
