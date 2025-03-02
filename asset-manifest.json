@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/curly-waddle/static/css/main.d3232ac4.chunk.css",
+    "main.js": "/curly-waddle/static/js/main.7a4905fc.chunk.js",
+    "main.js.map": "/curly-waddle/static/js/main.7a4905fc.chunk.js.map",
+    "runtime-main.js": "/curly-waddle/static/js/runtime-main.88588fc8.js",
+    "runtime-main.js.map": "/curly-waddle/static/js/runtime-main.88588fc8.js.map",
+    "static/js/2.8d765f24.chunk.js": "/curly-waddle/static/js/2.8d765f24.chunk.js",
+    "static/js/2.8d765f24.chunk.js.map": "/curly-waddle/static/js/2.8d765f24.chunk.js.map",
+    "index.html": "/curly-waddle/index.html",
+    "precache-manifest.960d0d65f00389848c9f5b3efdf3db9d.js": "/curly-waddle/precache-manifest.960d0d65f00389848c9f5b3efdf3db9d.js",
+    "service-worker.js": "/curly-waddle/service-worker.js",
+    "static/css/main.d3232ac4.chunk.css.map": "/curly-waddle/static/css/main.d3232ac4.chunk.css.map",
+    "static/js/2.8d765f24.chunk.js.LICENSE.txt": "/curly-waddle/static/js/2.8d765f24.chunk.js.LICENSE.txt",
+    "static/media/SmartBankerLogo.png": "/curly-waddle/static/media/SmartBankerLogo.b50cde19.png",
+    "static/media/logo.png": "/curly-waddle/static/media/logo.17f5c212.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.88588fc8.js",
+    "static/js/2.8d765f24.chunk.js",
+    "static/css/main.d3232ac4.chunk.css",
+    "static/js/main.7a4905fc.chunk.js"
+  ]
+}
