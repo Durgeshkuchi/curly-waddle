@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d45dd72eb3686fa84fed90fac8c7706",
+    "revision": "1d95dd116d1979f65376b0803e7184e0",
     "url": "/curly-waddle/index.html"
   },
   {
-    "revision": "1f6d422e3b5a7dbea6d2",
+    "revision": "21c56b43496a1ea0f436",
     "url": "/curly-waddle/static/css/main.d3232ac4.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/curly-waddle/static/js/2.8d765f24.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1f6d422e3b5a7dbea6d2",
-    "url": "/curly-waddle/static/js/main.7a4905fc.chunk.js"
+    "revision": "21c56b43496a1ea0f436",
+    "url": "/curly-waddle/static/js/main.68108069.chunk.js"
   },
   {
     "revision": "bc18427cff1f17bd5b8a",
