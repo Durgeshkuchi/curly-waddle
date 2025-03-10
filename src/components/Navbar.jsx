@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import '../styles/Navbar.scss'
 import logo from '../assets/logo.png' // Replace with actual logo
@@ -8,20 +8,38 @@ import {
   FaWallet,
   FaBuilding,
   FaUniversity,
-  FaCreditCard,
-  FaGift,
 } from 'react-icons/fa'
+import CustomerForm from './CustomerForm' // Import the modal
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const dropdownRefs = useRef({})
 
-  const handleMouseEnter = (menu) => {
-    setOpenDropdown(menu)
+  // Function to toggle dropdown on click
+  const handleMenuClick = (menu) => {
+    setOpenDropdown((prev) => (prev === menu ? null : menu))
   }
 
-  const handleMouseLeave = () => {
-    setOpenDropdown(null)
+  // Close dropdown when clicking outside
+  const handleClickOutside = (event) => {
+    if (
+      !Object.values(dropdownRefs.current).some(
+        (ref) => ref && ref.contains(event.target)
+      )
+    ) {
+      setOpenDropdown(null)
+    }
   }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  console.log('OPen drowdown: ', openDropdown)
 
   return (
     <nav className="navbar">
@@ -34,80 +52,114 @@ const Navbar = () => {
       <div className="navbar-center">
         <div
           className="dropdown"
-          onMouseEnter={() => handleMouseEnter('transactions')}
-          onMouseLeave={handleMouseLeave}
+          ref={(el) => (dropdownRefs.current['transactions'] = el)}
         >
-          <NavLink to="#">Transactions</NavLink>
-          {openDropdown === 'transactions' && (
-            <div className="dropdown-menu">
-              <div className="dropdown-content">
-                <div className="column">
-                  <h4>Types of Transactions</h4>
-                  <NavLink to="#">
-                    <FaWallet /> Cash Transactions
-                  </NavLink>
-                  <NavLink to="#">
-                    <FaBuilding /> Member Transactions
-                  </NavLink>
-                  <NavLink to="#">
-                    <FaUniversity /> Bank Transactions
-                  </NavLink>
-                </div>
-                <div className="column">
-                  <h4>Find a Transaction</h4>
-                  <NavLink to="#">Pending Transactions</NavLink>
-                  <NavLink to="#">Reconciliations</NavLink>
-                  <NavLink to="#">Settlement</NavLink>
-                </div>
-                <div className="column">
-                  <h4>Common Tasks</h4>
-                  <NavLink to="#">
-                    <FaCreditCard /> Pay Credit Card Bill
-                  </NavLink>
-                  <NavLink to="#">
-                    <FaGift /> Activate Credit Card
-                  </NavLink>
-                </div>
+          <NavLink
+            to="#"
+            onClick={() => handleMenuClick('transactions')}
+            className={openDropdown === 'transactions' ? 'active' : ''}
+          >
+            Transactions
+          </NavLink>
+          <div
+            className={`dropdown-menu ${
+              openDropdown === 'transactions' ? 'active' : ''
+            }`}
+          >
+            <div className="dropdown-content">
+              <div className="column">
+                <h4>Types of Transactions</h4>
+                <NavLink to="#">
+                  <FaWallet /> Cash Transactions
+                </NavLink>
+                <NavLink to="#">
+                  <FaBuilding /> Member Transactions
+                </NavLink>
+                <NavLink to="#">
+                  <FaUniversity /> Member Transactions(Branchwise)
+                </NavLink>
+                <NavLink to="#">
+                  <FaBuilding /> Single/Multiple Transactions
+                </NavLink>
+                <NavLink to="#">
+                  <FaUniversity /> Bank Transactions
+                </NavLink>
+                <h4>Bank Reconciliation</h4>
+              </div>
+              <div className="column">
+                <h4>Thrift / MBF / Deposits</h4>
+                <NavLink to="#">Retirement</NavLink>
+                <NavLink to="#">Death</NavLink>
+                <h4>Loans and Advances</h4>
+                <h4>Interest Accounts</h4>
+              </div>
+              <div className="column">
+                <h4>Settlements</h4>
+                <h4>Share Capital/Dividend Payments</h4>
+                <h4>Monthly Transfers</h4>
+                <h4>Settlement</h4>
+                <h4>Demand List</h4>
+                <h4>Online Payments</h4>
               </div>
             </div>
-          )}
+          </div>
         </div>
+
+        <NavLink to="#" onClick={() => setOpenDropdown(null)}>
+          Approvals
+        </NavLink>
+        <NavLink to="#" onClick={() => setOpenDropdown(null)}>
+          Utilities
+        </NavLink>
+        <NavLink to="#" onClick={() => setOpenDropdown(null)}>
+          Queries
+        </NavLink>
 
         <div
           className="dropdown"
-          onMouseEnter={() => handleMouseEnter('checking')}
-          onMouseLeave={handleMouseLeave}
+          ref={(el) => (dropdownRefs.current['acc-open'] = el)}
         >
-          <NavLink to="#">Checking & Savings</NavLink>
-          {openDropdown === 'checking' && (
-            <div className="dropdown-menu full-width">
-              <div className="column">
-                <h4>Savings</h4>
-                <NavLink to="#">360 Performance Savings™</NavLink>
-                <NavLink to="#">360 CDs®</NavLink>
-                <NavLink to="#">Kids Savings Account</NavLink>
-              </div>
-              <div className="column">
-                <h4>Checking</h4>
-                <NavLink to="#">360 Checking®</NavLink>
-                <NavLink to="#">Teen Checking</NavLink>
-              </div>
-              <div className="column">
-                <h4>Manage Your Account</h4>
-                <NavLink to="#">Send & Receive Payments</NavLink>
-                <NavLink to="#">Download Mobile App</NavLink>
-              </div>
+          <NavLink
+            to="#"
+            onClick={() => handleMenuClick('acc-open')}
+            className={openDropdown === 'acc-open' ? 'active' : ''}
+          >
+            A/C Opening
+          </NavLink>
+          <div
+            className={`dropdown-menu ${
+              openDropdown === 'acc-open' ? 'active' : ''
+            }`}
+          >
+            <div className="column">
+              <h4>Account Opening</h4>
+              <NavLink to="#">Deposits Opening</NavLink>
+              <NavLink to="#">Loan Openings</NavLink>
+              <NavLink to="#" onClick={() => setIsModalOpen(true)}>
+                Customer Opening
+              </NavLink>
             </div>
-          )}
+            <div className="column">
+              <h4>General Ledger Heads</h4>
+            </div>
+          </div>
         </div>
 
-        <NavLink to="#">Approvals</NavLink>
-
-        <NavLink to="#">Utilities</NavLink>
-        <NavLink to="#">Queries</NavLink>
-        <NavLink to="#">Maintenance</NavLink>
-        <NavLink to="#">Connect</NavLink>
-        <NavLink to="#">Help</NavLink>
+        <NavLink to="#" onClick={() => setOpenDropdown(null)}>
+          Parameters
+        </NavLink>
+        <NavLink to="#" onClick={() => setOpenDropdown(null)}>
+          Outputs
+        </NavLink>
+        <NavLink to="#" onClick={() => setOpenDropdown(null)}>
+          Maintenance
+        </NavLink>
+        <NavLink to="#" onClick={() => setOpenDropdown(null)}>
+          Connect
+        </NavLink>
+        <NavLink to="#" onClick={() => setOpenDropdown(null)}>
+          Help
+        </NavLink>
       </div>
 
       {/* Right Section - Icons & Sign In */}
@@ -118,6 +170,12 @@ const Navbar = () => {
           Sign Out
         </NavLink>
       </div>
+
+      {/* Customer Details Form Modal */}
+      <CustomerForm
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </nav>
   )
 }

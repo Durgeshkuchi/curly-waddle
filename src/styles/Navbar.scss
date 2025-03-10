@@ -24,7 +24,7 @@
     a {
       text-decoration: none;
       color: #000;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: bold;
       position: relative;
       padding-bottom: 5px;
@@ -43,7 +43,7 @@
         position: absolute;
         top: 50px; /* Ensure it is right below the navbar */
         left: 0;
-        width: 60vw;
+        width: 50vw;
         background: $white;
         color: $primary-blue;
         padding: 20px 40px;
@@ -51,17 +51,19 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         display: none;
         z-index: 999;
+        animation: fadeIn 0.3s ease-in-out; /* New animation added */
       }
 
-      &:hover .dropdown-menu {
+      &:hover .dropdown-menu,
+      .dropdown-menu.active {
         display: flex;
       }
 
       .dropdown-content {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
-        max-width: 1200px; /* Ensures dropdown doesn't stretch too much on large screens */
+        max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
       }
@@ -69,7 +71,7 @@
       .column {
         flex: 1;
         padding: 10px;
-        min-width: 200px;
+        min-width: 100px;
 
         h4 {
           font-size: 14px;
@@ -116,10 +118,21 @@
     .signin-button {
       text-decoration: none;
       color: #000;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: bold;
       display: flex;
       align-items: center;
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
