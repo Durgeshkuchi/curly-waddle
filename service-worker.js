@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/curly-waddle/precache-manifest.0779d740ce62e067c8cbfd22f18770b9.js"
+  "/curly-waddle/precache-manifest.4be3dbf4c92a37fa52f02f936dab9e4d.js"
 );
 
 self.addEventListener('message', (event) => {

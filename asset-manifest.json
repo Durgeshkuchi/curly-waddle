@@ -1,24 +1,27 @@
 {
   "files": {
-    "main.css": "/curly-waddle/static/css/main.d3232ac4.chunk.css",
-    "main.js": "/curly-waddle/static/js/main.68108069.chunk.js",
-    "main.js.map": "/curly-waddle/static/js/main.68108069.chunk.js.map",
+    "main.css": "/curly-waddle/static/css/main.4c6454f1.chunk.css",
+    "main.js": "/curly-waddle/static/js/main.814f13ab.chunk.js",
+    "main.js.map": "/curly-waddle/static/js/main.814f13ab.chunk.js.map",
     "runtime-main.js": "/curly-waddle/static/js/runtime-main.88588fc8.js",
     "runtime-main.js.map": "/curly-waddle/static/js/runtime-main.88588fc8.js.map",
-    "static/js/2.8d765f24.chunk.js": "/curly-waddle/static/js/2.8d765f24.chunk.js",
-    "static/js/2.8d765f24.chunk.js.map": "/curly-waddle/static/js/2.8d765f24.chunk.js.map",
+    "static/js/2.cffad432.chunk.js": "/curly-waddle/static/js/2.cffad432.chunk.js",
+    "static/js/2.cffad432.chunk.js.map": "/curly-waddle/static/js/2.cffad432.chunk.js.map",
     "index.html": "/curly-waddle/index.html",
-    "precache-manifest.0779d740ce62e067c8cbfd22f18770b9.js": "/curly-waddle/precache-manifest.0779d740ce62e067c8cbfd22f18770b9.js",
+    "precache-manifest.4be3dbf4c92a37fa52f02f936dab9e4d.js": "/curly-waddle/precache-manifest.4be3dbf4c92a37fa52f02f936dab9e4d.js",
     "service-worker.js": "/curly-waddle/service-worker.js",
-    "static/css/main.d3232ac4.chunk.css.map": "/curly-waddle/static/css/main.d3232ac4.chunk.css.map",
-    "static/js/2.8d765f24.chunk.js.LICENSE.txt": "/curly-waddle/static/js/2.8d765f24.chunk.js.LICENSE.txt",
+    "static/css/main.4c6454f1.chunk.css.map": "/curly-waddle/static/css/main.4c6454f1.chunk.css.map",
+    "static/js/2.cffad432.chunk.js.LICENSE.txt": "/curly-waddle/static/js/2.cffad432.chunk.js.LICENSE.txt",
     "static/media/SmartBankerLogo.png": "/curly-waddle/static/media/SmartBankerLogo.b50cde19.png",
-    "static/media/logo.png": "/curly-waddle/static/media/logo.17f5c212.png"
+    "static/media/cardServices.jpg": "/curly-waddle/static/media/cardServices.94931f03.jpg",
+    "static/media/deposits.jpg": "/curly-waddle/static/media/deposits.a02fde7e.jpg",
+    "static/media/logo.png": "/curly-waddle/static/media/logo.17f5c212.png",
+    "static/media/savingsAccount.jpg": "/curly-waddle/static/media/savingsAccount.e44fc56c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.88588fc8.js",
-    "static/js/2.8d765f24.chunk.js",
-    "static/css/main.d3232ac4.chunk.css",
-    "static/js/main.68108069.chunk.js"
+    "static/js/2.cffad432.chunk.js",
+    "static/css/main.4c6454f1.chunk.css",
+    "static/js/main.814f13ab.chunk.js"
   ]
 }
